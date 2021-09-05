@@ -1,0 +1,105 @@
+@import "./modules/removers";
+@import "./modules/wrappers";
+@import "./modules/buttons";
+
+/* ------ fonts ----- */
+@font-face {
+  font-family: 'montserrat-bold';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+}
+
+@font-face {
+  font-family: 'montserrat-regular';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+}
+
+@font-face {
+  font-family: 'roboto-light';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+}
+
+@font-face {
+  font-family: 'montserrat-light';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+}
+
+.roboto-bold {
+  font-family: roboto-light, sans-serif;
+}
+
+.montserrat-bold {
+  font-family: montserrat-bold, sans-serif;
+}
+
+.montserrat-regular {
+  font-family: montserrat-regular, sans-serif;
+}
+
+.montserrat-light {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* --- end of fonts -- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* --- Navigation Bar -- */
+
+/* --- Logo -- */
+.nav_bar_container {
+  @include flexBox(row);
+
+  padding-left: 2rem;
+}
+
+.logoflex {
+  @include flexBox(row);
+}
+
+.logo_img {
+  margin-top: 0.5rem;
+
+  @include resize(5rem, 5rem);
+}
+
+.logo_title {
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+}
+
+/* --- Navigation Links -- */
+.nav_links {
+  position: absolute;
+
+  @include flexBox(row);
+
+  right: 5rem;
+  margin-top: 2rem;
+}
+
+.navLinkWrapper {
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.navLink {
+  @include bgLessBtn;
+
+  text-decoration: none;
+}
+
+.selected_link {
+  @include regBtn (20rem, 4rem, false);
+}
+
+/* --- End of Navigation Bar --- */

@@ -1,9 +1,21 @@
 // ------------- DUCK PATH ---------------
 const GET_DATA = 'REDUX/HOME/GET_DATA';
 const STORE_FETCHED_DATA = 'REDUX/HOME/STORE_FETCHED_DATA';
-const CLEAR_FETCHED = 'REDUX/HOME/CLEAR_FETCHED';
 // -------------- DEFAUL STATE -----------
-const defaultState = [];
+const defaultState = [
+  { name: 'Apple', symbol: 'AAPL' },
+  { name: 'Facebook', symbol: 'FB' },
+  { name: 'Intel', symbol: 'INTC' },
+  { name: 'Oracle', symbol: 'ORCL' },
+  { name: 'Nike', symbol: 'NKE' },
+  { name: 'Pfizer', symbol: 'PFE' },
+  { name: 'Nokia', symbol: 'NOK' },
+  { name: 'Twitter', symbol: 'TWTR' },
+  { name: 'Cisco', symbol: 'CSCO' },
+  { name: 'Ali baba', symbol: 'BABA' },
+  { name: 'Activision Blizzard', symbol: 'ATVI' },
+  { name: 'Fox', symbol: 'FOXA' },
+];
 // -------------- ACTIONS ----------------
 const getData = (payload) => ({
   type: GET_DATA,
@@ -13,11 +25,14 @@ const storeFetchedData = (payload) => ({
   type: STORE_FETCHED_DATA,
   payload,
 });
-const clearFetched = () => ({
-  type: CLEAR_FETCHED,
-});
   // -------------REDUCERS ----------------
 const homeDataReducer = (state = defaultState, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+const detailDataReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_DATA:
       return state;
@@ -47,9 +62,9 @@ export {
   // -------------- ACTIONS ----------------
   getData,
   storeFetchedData,
-  clearFetched,
   // -------------REDUCERS ----------------
   homeDataReducer,
+  detailDataReducer,
   // -------------MIDDLEWARES -------------
   fetchDataMiddleware,
 };

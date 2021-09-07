@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTransition, animated } from 'react-spring';
+import pointer from '../images/assets/pointer.svg';
 
 const Details = () => {
   const data = useSelector((data) => data.filteredDataReducer);
@@ -58,6 +59,7 @@ const Details = () => {
               <button type="button" onClick={() => { handleClick(e[2]); }} className="collapse_button">
                 {e[1].name}
                 {data.Summary.price}
+                <img className={e[1].value ? 'pointing_arrow pointing_down' : 'pointing_arrow pointing_right'} alt="pointer" src={pointer} />
               </button>
               {e[0]((style, item) => (item ? (
                 <animated.div style={style} className="collapsed-info">

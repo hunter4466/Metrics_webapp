@@ -210,7 +210,7 @@ body {
   font-family: Lato1, serif;
   font-size: 5vw;
   left: 25vw;
-  top: 10vw;
+  top: 20vw;
   width: 70vw;
   height: 10vw;
   word-break: normal;
@@ -219,9 +219,8 @@ body {
   position: relative;
   font-family: Lato1, serif;
   font-size: 10vw;
-  left: 25vw;
   top: 10vw;
-  width: 70vw;
+  width: 90vw;
   height: 10vw;
   word-break: normal;
 }
@@ -262,4 +261,37 @@ body {
   font-family: Lato3, serif;
   font-size: 5vw;
   position: relative;
+}
+.pointing_arrow {
+  position: absolute;
+  width: 4.5vw;
+  height: 4.5vw;
+  left: 90vw;
+  transform: rotate(90deg);
+}
+.pointing_down {
+  transform: rotate(540deg);
+  animation-name: rotationanim;
+  animation-duration:0.5s;
+}
+@keyframes rotationanim {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
+.pointing_right {
+  transform: rotate(90deg);
+  animation-name: rotationanim2;
+  animation-duration:0.5s;
+}
+@keyframes rotationanim2 {
+  0% {
+    transform: rotate(540deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
 }

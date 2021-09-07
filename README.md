@@ -18,7 +18,7 @@
 To get a local copy up and running follow these simple example steps.
 Run:
 - `git clone https://github.com/hunter4466/Metrics_webapp.git`
-- `cd Metrics_webapp`
+- `cd Metrics_webapp `
 -`Install node_modules, run npm install and install 14.17.4 node version (use nvm)`
 - Run 'npm run start' from the command line.
 
@@ -30,7 +30,7 @@ Get a live preview of the project on this link
 
 ## Author
 
-👤 **Mario Chois**
+👤 **Mario Chois** 
 
 - Github: [Hunter4466](https://github.com/hunter4466)
 

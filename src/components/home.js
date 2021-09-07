@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { filterData, getData } from '../redux/home/home';
+import pointer from '../images/assets/pointer.svg';
 
 const Home = () => {
   const data = useSelector((data) => data.detailDataReducer);
@@ -28,6 +29,7 @@ const Home = () => {
         {data.map((e) => (
           <li key={e.Summary.Name}>
             <NavLink onClick={() => { handleClick(e); }} className="home_item_btn" type="button" key={e.Symbol} to="/details">
+              <img src={pointer} alt="pointer" className="home_arrows" />
               <h1>{e.Summary.Name}</h1>
               <h2>
                 Price US$

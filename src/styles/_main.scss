@@ -132,7 +132,7 @@ body {
 /* --- home -- */
 .Home_Header_1 {
   height: 30vw;
-  background-color: rgb(250, 81, 146);
+  background: linear-gradient(135deg, rgba(250, 81, 146,1) 0%, rgba(250, 81, 146,0.9) 67%, rgba(250, 81, 146,1) 100%);
   color: white;
   padding-top: 20vw;
   text-align: right;
@@ -154,7 +154,7 @@ body {
 .Home_Header_2 {
   height: 6vw;
   text-align: left;
-  background-color: rgb(207, 66, 120);
+  background: linear-gradient(135deg, rgba(207, 66, 120,1) 0%, rgba(207, 66, 120,0.9) 67%, rgba(207, 66, 120,1) 100%);
   padding-top: 1vw;
 }
 
@@ -164,6 +164,14 @@ body {
   margin-left: 2vw;
   margin-top: 0;
   color: white;
+}
+.home_arrows {
+  position: relative;
+  width: 4.5vw;
+  height: 4.5vw;
+  top: -18vw;
+  left: -2vw;
+  transform: rotate(90deg);
 }
 
 .home_btns_cont {
@@ -176,7 +184,7 @@ body {
 
 .home_btns_cont li {
   list-style: none;
-  background-color: rgb(207, 66, 120);
+  background: linear-gradient(135deg, rgba(207,66,120,1) 0%, rgba(207,66,120,0.95) 67%, rgba(207,66,120,1) 100%);
   padding-top: 20vw;
   padding-left: 5vw;
   width: 45vw;
@@ -184,11 +192,11 @@ body {
 }
 
 .home_btns_cont li:nth-child(4n + 4) {
-  background-color: rgb(231, 74, 135);
+  background: linear-gradient(135deg, rgba(231, 74, 135,1) 0%, rgba(231, 74, 135,0.95) 67%, rgba(231, 74, 135,1) 100%);
 }
 
 .home_btns_cont li:nth-child(4n + 1) {
-  background-color: rgb(231, 74, 135);
+  background: linear-gradient(135deg, rgba(231, 74, 135,1) 0%, rgba(231, 74, 135,0.95) 67%, rgba(231, 74, 135,1) 100%);
 }
 
 .home_btns_cont li a {
@@ -221,13 +229,12 @@ body {
 .home_item_btn {
   width: 50vw;
   height: 50vw;
-  background-color: red;
 }
 
 /* --- details -- */
 .nameTitle {
   height: 50vw;
-  background-color: rgb(245, 80, 144);
+  background: linear-gradient(135deg, rgba(245,80,144,1) 0%, rgba(245,80,144,0.9) 67%, rgba(245,80,144,1) 100%);
   color: white;
   margin-top: -7vw;
   width: 100vw;
@@ -256,7 +263,7 @@ body {
 }
 
 .details_container:nth-child(odd) {
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .details_container:nth-child(even) {
@@ -271,11 +278,11 @@ body {
   font-size: 5vw;
   color: white;
   border-style: none;
-  background-color: rgb(207, 66, 120);
+  background: linear-gradient(135deg, rgba(207, 66, 120,1) 0%, rgba(207, 66, 120,0.95) 67%, rgba(207, 66, 120,1) 100%);
 }
 
 .collapsed-info {
-  background-color: rgb(181, 67, 120);
+  background: linear-gradient(135deg, rgba(181, 67, 120,1) 0%, rgba(181, 67, 120,0.95) 67%, rgba(181, 67, 120,1) 100%);
   margin: 0;
   text-align: center;
 }

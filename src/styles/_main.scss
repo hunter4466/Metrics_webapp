@@ -105,11 +105,13 @@
 
 
 /* --- end of fonts -- */
+
 /* --- generals -- */
 body {
   margin: 0;
   padding: 0;
 }
+
 /* --- header -- */
 .home_btn {
   width: 100vw;
@@ -117,6 +119,7 @@ body {
   text-decoration: none;
   height: 5vw;
 }
+
 .Home_Btn_text {
   height: 8vw;
   font-family: Lato9, serif;
@@ -125,6 +128,7 @@ body {
   background-color: rgb(207, 66, 120);
   margin: 0;
 }
+
 /* --- home -- */
 .Home_Header_1 {
   height: 30vw;
@@ -134,22 +138,26 @@ body {
   text-align: right;
   padding-right: 4vw;
 }
+
 .Home_Header_1 h1 {
   font-family: Lato8, serif;
   font-size: 10vw;
   margin-top: 0;
 }
+
 .Home_Header_1 h2 {
   font-family: Lato8, serif;
   font-size: 5vw;
   margin-top: 0;
 }
+
 .Home_Header_2 {
   height: 6vw;
   text-align: left;
   background-color: rgb(207, 66, 120);
   padding-top: 1vw;
 }
+
 .Home_Header_2 h1 {
   font-family: Lato8, serif;
   font-size: 3.5vw;
@@ -157,13 +165,15 @@ body {
   margin-top: 0;
   color: white;
 }
-.home_btns_cont { 
+
+.home_btns_cont {
   display: grid;
   grid-template-rows: 50vw 50vw 50vw 50vw 50vw 50vw;
   grid-template-columns: 50vw 509vw;
   padding: 0;
   margin: 0;
 }
+
 .home_btns_cont li {
   list-style: none;
   background-color: rgb(207, 66, 120);
@@ -172,12 +182,15 @@ body {
   width: 45vw;
   text-align: right;
 }
+
 .home_btns_cont li:nth-child(4n + 4) {
   background-color: rgb(231, 74, 135);
 }
+
 .home_btns_cont li:nth-child(4n + 1) {
   background-color: rgb(231, 74, 135);
 }
+
 .home_btns_cont li a {
   text-decoration: none;
   color: white;
@@ -185,26 +198,11 @@ body {
   font-size: 2.5vw;
   width: 25vw;
 }
+
 .home_btns_cont li h1 {
   width: 40vw;
 }
-.home_btns_cont li h2 {
-  width: 40vw;
-}
-.home_item_btn {
-  width: 50vw;
-  height: 50vw;
-  background-color: red;
-}
-/* --- details -- */
-.nameTitle {
-  height: 50vw;
-  background-color: rgb(245, 80, 144);
-  color: white;
-  margin-top: -7vw;
-  width: 100vw;
-  text-align: right;
-}
+
 .nameTitle h2 {
   position: relative;
   font-family: Lato1, serif;
@@ -215,6 +213,27 @@ body {
   height: 10vw;
   word-break: normal;
 }
+
+.home_btns_cont li h2 {
+  width: 40vw;
+}
+
+.home_item_btn {
+  width: 50vw;
+  height: 50vw;
+  background-color: red;
+}
+
+/* --- details -- */
+.nameTitle {
+  height: 50vw;
+  background-color: rgb(245, 80, 144);
+  color: white;
+  margin-top: -7vw;
+  width: 100vw;
+  text-align: right;
+}
+
 .nameTitleText {
   position: relative;
   font-family: Lato1, serif;
@@ -224,10 +243,12 @@ body {
   height: 10vw;
   word-break: normal;
 }
+
 .detailsUl {
   padding: 0;
   margin: 0;
 }
+
 .details_container {
   height: fit-content;
   list-style: none;
@@ -237,9 +258,11 @@ body {
 .details_container:nth-child(odd) {
   opacity: 0.9;
 }
+
 .details_container:nth-child(even) {
   opacity: 1;
 }
+
 .collapse_button {
   width: 100vw;
   height: 15vw;
@@ -250,11 +273,13 @@ body {
   border-style: none;
   background-color: rgb(207, 66, 120);
 }
+
 .collapsed-info {
   background-color: rgb(181, 67, 120);
   margin: 0;
   text-align: center;
 }
+
 .collapsed-text {
   margin: 0;
   color: white;
@@ -262,6 +287,7 @@ body {
   font-size: 5vw;
   position: relative;
 }
+
 .pointing_arrow {
   position: absolute;
   width: 4.5vw;
@@ -269,28 +295,34 @@ body {
   left: 90vw;
   transform: rotate(90deg);
 }
+
 .pointing_down {
   transform: rotate(540deg);
   animation-name: rotationanim;
-  animation-duration:0.5s;
+  animation-duration: 0.5s;
 }
+
 @keyframes rotationanim {
   0% {
     transform: rotate(180deg);
   }
+
   100% {
     transform: rotate(540deg);
   }
 }
+
 .pointing_right {
   transform: rotate(90deg);
   animation-name: rotationanim2;
-  animation-duration:0.5s;
+  animation-duration: 0.5s;
 }
+
 @keyframes rotationanim2 {
   0% {
     transform: rotate(540deg);
   }
+
   100% {
     transform: rotate(90deg);
   }

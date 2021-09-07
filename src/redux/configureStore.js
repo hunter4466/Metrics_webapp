@@ -2,11 +2,11 @@ import {
   createStore, compose, combineReducers, applyMiddleware,
 } from 'redux';
 import logger from 'redux-logger';
-import { fetchDataMiddleware, homeDataReducer, detailDataReducer } from './home/home';
+import { fetchDataMiddleware, detailDataReducer, filteredDataReducer } from './home/home';
 
 const reducer = combineReducers({
-  homeDataReducer,
   detailDataReducer,
+  filteredDataReducer,
 });
 const composedEnhancer = compose(
   applyMiddleware(fetchDataMiddleware),

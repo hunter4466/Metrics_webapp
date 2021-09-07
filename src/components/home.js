@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { getData } from '../redux/home/home';
+import { filterData, getData } from '../redux/home/home';
 
 const Home = () => {
-  const data = useSelector((data) => data.homeDataReducer);
+  const data = useSelector((data) => data.detailDataReducer);
   const dispatch = useDispatch();
-  const handleClick = (key) => {
-    dispatch(getData(key));
+  const mainArray = ['AAPL', 'FB', 'INTC', 'ORCL', 'NKE', 'PFE', 'NOK', 'TWTR', 'CSCO', 'BABA', 'ATVI', 'FOXA'];
+  useEffect(() => {
+    dispatch(getData(mainArray));
+  }, []);
+
+  const handleClick = (props) => {
+    dispatch(filterData(props));
   };
 
   return (
     <div>
-      <div>
-        <h1>Home</h1>
-        <div><h1>Financials</h1></div>
+      <div className="Home_Header_1">
+        <h1>Cripto Up to date</h1>
+        <h2>12 results</h2>
       </div>
-      {data.map((e) => (
-        <NavLink onClick={() => { handleClick(e.symbol); }} type="button" key={e.symbol} to="/details">{e.name}</NavLink>
-      ))}
+      <div className="Home_Header_2">
+        <h1>STATS BY COMPANY</h1>
+      </div>
+      <ul className="home_btns_cont">
+        {data.map((e) => (
+          <li key={e.Summary.Name}>
+            <NavLink onClick={() => { handleClick(e); }} className="home_item_btn" type="button" key={e.Symbol} to="/details">
+              <h1>{e.Summary.Name}</h1>
+              <h2>
+                Price US$
+                {e.Summary.Price}
+              </h2>
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

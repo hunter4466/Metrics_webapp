@@ -12,11 +12,8 @@ import Details from './components/details';
 
 const App = () => (
   <Router>
-    <NavLink to="/home">
-      Home
-    </NavLink>
-    <NavLink to="/details">
-      Details
+    <NavLink className="home_btn" to="/home">
+      <h1 className="Home_Btn_text">Home</h1>
     </NavLink>
     <Switch>
       <Route exact path="/">

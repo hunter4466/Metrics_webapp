@@ -1,21 +1,9 @@
 // ------------- DUCK PATH ---------------
 const GET_DATA = 'REDUX/HOME/GET_DATA';
 const STORE_FETCHED_DATA = 'REDUX/HOME/STORE_FETCHED_DATA';
+const FILTER_DATA = 'REDUX/HOME/FILTER_DATA';
 // -------------- DEFAUL STATE -----------
-const defaultState = [
-  { name: 'Apple', symbol: 'AAPL' },
-  { name: 'Facebook', symbol: 'FB' },
-  { name: 'Intel', symbol: 'INTC' },
-  { name: 'Oracle', symbol: 'ORCL' },
-  { name: 'Nike', symbol: 'NKE' },
-  { name: 'Pfizer', symbol: 'PFE' },
-  { name: 'Nokia', symbol: 'NOK' },
-  { name: 'Twitter', symbol: 'TWTR' },
-  { name: 'Cisco', symbol: 'CSCO' },
-  { name: 'Ali baba', symbol: 'BABA' },
-  { name: 'Activision Blizzard', symbol: 'ATVI' },
-  { name: 'Fox', symbol: 'FOXA' },
-];
+const defaultState = [];
 // -------------- ACTIONS ----------------
 const getData = (payload) => ({
   type: GET_DATA,
@@ -25,21 +13,25 @@ const storeFetchedData = (payload) => ({
   type: STORE_FETCHED_DATA,
   payload,
 });
+const filterData = (payload) => ({
+  type: FILTER_DATA,
+  payload,
+});
   // -------------REDUCERS ----------------
-const homeDataReducer = (state = defaultState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
 const detailDataReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_DATA:
       return state;
     case STORE_FETCHED_DATA:
-      return [...state, action.payload];
-    case CLEAR_FETCHED:
-      return defaultState;
+      return action.payload;
+    default:
+      return state;
+  }
+};
+const filteredDataReducer = (state = defaultState, action) => {
+  switch (action.type) {
+    case FILTER_DATA:
+      return action.payload;
     default:
       return state;
   }
@@ -47,13 +39,16 @@ const detailDataReducer = (state = defaultState, action) => {
   // -------------MIDDLEWARES -------------
 const fetchDataMiddleware = (store) => (next) => (action) => {
   if (action.type === GET_DATA) {
-    fetch(`https://financialmodelingprep.com/api/v3/profile/${action.payload}?apikey=96544b4b37a6cd1ae6656534647840ef`, {
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => store.dispatch(storeFetchedData(json)));
+    Promise.all(
+      action.payload.map((e) => (
+        fetch(`https://api.aletheiaapi.com/StockData?symbol=${e}&summary=true`, {
+          headers: {
+            key: '044854F9473A42AC856A0D007FB5D93F',
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        }).then((response) => response.json())
+      )),
+    ).then((data) => store.dispatch(storeFetchedData(data)));
   }
   next(action);
 };
@@ -62,9 +57,10 @@ export {
   // -------------- ACTIONS ----------------
   getData,
   storeFetchedData,
+  filterData,
   // -------------REDUCERS ----------------
-  homeDataReducer,
   detailDataReducer,
+  filteredDataReducer,
   // -------------MIDDLEWARES -------------
   fetchDataMiddleware,
 };

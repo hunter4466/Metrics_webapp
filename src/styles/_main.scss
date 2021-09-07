@@ -4,102 +4,262 @@
 
 /* ------ fonts ----- */
 @font-face {
-  font-family: 'montserrat-bold';
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+  font-family: 'Cocogoose1';
+  src: url('./fonts/Cocogoose_Pro_Italic-trial.ttf');
 }
 
 @font-face {
-  font-family: 'montserrat-regular';
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+  font-family: 'Cocogoose2';
+  src: url('./fonts/Cocogoose_Pro_Light_Italic-trial.ttf');
 }
 
 @font-face {
-  font-family: 'roboto-light';
-  src: url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+  font-family: 'Cocogoose3';
+  src: url('./fonts/Cocogoose_Pro_Light-trial.ttf');
 }
 
 @font-face {
-  font-family: 'montserrat-light';
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+  font-family: 'Cocogoose4';
+  src: url('./fonts/Cocogoose_Pro_Semilight_Italic-trial.ttf');
 }
 
-.roboto-bold {
-  font-family: roboto-light, sans-serif;
+@font-face {
+  font-family: 'Cocogoose5';
+  src: url('./fonts/Cocogoose_Pro_Semilight-trial.ttf');
 }
 
-.montserrat-bold {
-  font-family: montserrat-bold, sans-serif;
+@font-face {
+  font-family: 'Cocogoose6';
+  src: url('./fonts/Cocogoose_Pro_Thin_Italic-trial.ttf');
 }
 
-.montserrat-regular {
-  font-family: montserrat-regular, sans-serif;
+@font-face {
+  font-family: 'Cocogoose7';
+  src: url('./fonts/Cocogoose_Pro_Thin-trial.ttf');
 }
 
-.montserrat-light {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@font-face {
+  font-family: 'Cocogoose8';
+  src: url('./fonts/Cocogoose_Pro_UltraLight_Italic-trial.ttf');
 }
+
+@font-face {
+  font-family: 'Cocogoose9';
+  src: url('./fonts/Cocogoose_Pro_Ultralight-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose10';
+  src: url('./fonts/Cocogoose_Pro-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Lato1';
+  src: url('./fonts/Lato-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Lato2';
+  src: url('./fonts/Lato-BlackItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato3';
+  src: url('./fonts/Lato-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Lato4';
+  src: url('./fonts/Lato-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato5';
+  src: url('./fonts/Lato-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato6';
+  src: url('./fonts/Lato-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Lato7';
+  src: url('./fonts/Lato-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato8';
+  src: url('./fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato9';
+  src: url('./fonts/Lato-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Lato10';
+  src: url('./fonts/Lato-ThinItalic.ttf');
+}
+
 
 /* --- end of fonts -- */
-
-* {
+/* --- generals -- */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-
-body {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* --- Navigation Bar -- */
-
-/* --- Logo -- */
-.nav_bar_container {
-  @include flexBox(row);
-
-  padding-left: 2rem;
-}
-
-.logoflex {
-  @include flexBox(row);
-}
-
-.logo_img {
-  margin-top: 0.5rem;
-
-  @include resize(5rem, 5rem);
-}
-
-.logo_title {
-  margin-top: 1.5rem;
-  margin-left: 2rem;
-}
-
-/* --- Navigation Links -- */
-.nav_links {
-  position: absolute;
-
-  @include flexBox(row);
-
-  right: 5rem;
-  margin-top: 2rem;
-}
-
-.navLinkWrapper {
-  list-style: none;
-  padding-left: 2rem;
-}
-
-.navLink {
-  @include bgLessBtn;
-
+/* --- header -- */
+.home_btn {
+  width: 100vw;
+  text-align: center;
   text-decoration: none;
+  height: 5vw;
+}
+.Home_Btn_text {
+  height: 8vw;
+  font-family: Lato9, serif;
+  font-size: 5vw;
+  color: white;
+  background-color: rgb(207, 66, 120);
+  margin: 0;
+}
+/* --- home -- */
+.Home_Header_1 {
+  height: 30vw;
+  background-color: rgb(250, 81, 146);
+  color: white;
+  padding-top: 20vw;
+  text-align: right;
+  padding-right: 4vw;
+}
+.Home_Header_1 h1 {
+  font-family: Lato8, serif;
+  font-size: 10vw;
+  margin-top: 0;
+}
+.Home_Header_1 h2 {
+  font-family: Lato8, serif;
+  font-size: 5vw;
+  margin-top: 0;
+}
+.Home_Header_2 {
+  height: 6vw;
+  text-align: left;
+  background-color: rgb(207, 66, 120);
+  padding-top: 1vw;
+}
+.Home_Header_2 h1 {
+  font-family: Lato8, serif;
+  font-size: 3.5vw;
+  margin-left: 2vw;
+  margin-top: 0;
+  color: white;
+}
+.home_btns_cont { 
+  display: grid;
+  grid-template-rows: 50vw 50vw 50vw 50vw 50vw 50vw;
+  grid-template-columns: 50vw 509vw;
+  padding: 0;
+  margin: 0;
+}
+.home_btns_cont li {
+  list-style: none;
+  background-color: rgb(207, 66, 120);
+  padding-top: 20vw;
+  padding-left: 5vw;
+  width: 45vw;
+  text-align: right;
+}
+.home_btns_cont li:nth-child(4n + 4) {
+  background-color: rgb(231, 74, 135);
+}
+.home_btns_cont li:nth-child(4n + 1) {
+  background-color: rgb(231, 74, 135);
+}
+.home_btns_cont li a {
+  text-decoration: none;
+  color: white;
+  font-family: Lato1, serif;
+  font-size: 2.5vw;
+  width: 25vw;
+}
+.home_btns_cont li h1 {
+  width: 40vw;
+}
+.home_btns_cont li h2 {
+  width: 40vw;
+}
+.home_item_btn {
+  width: 50vw;
+  height: 50vw;
+  background-color: red;
+}
+/* --- details -- */
+.nameTitle {
+  height: 50vw;
+  background-color: rgb(252, 82, 147);
+  color: white;
+  margin-top: -7vw;
+  width: 100vw;
+  text-align: right;
+}
+.nameTitle h2 {
+  position: relative;
+  font-family: Lato1, serif;
+  font-size: 5vw;
+  left: 25vw;
+  top: 10vw;
+  width: 70vw;
+  height: 10vw;
+  word-break: normal;
+}
+.nameTitleText {
+  position: relative;
+  font-family: Lato1, serif;
+  font-size: 10vw;
+  left: 25vw;
+  top: 10vw;
+  width: 70vw;
+  height: 10vw;
+  word-break: normal;
+}
+.detailsUl {
+  padding: 0;
+  margin: 0;
+}
+.details_container {
+  height: fit-content;
+  list-style: none;
+  margin-left: 0;
 }
 
-.selected_link {
-  @include regBtn (20rem, 4rem, false);
+.details_container:nth-child(odd) {
+  opacity: 0.9;
 }
-
-/* --- End of Navigation Bar --- */
+.details_container:nth-child(even) {
+  opacity: 1;
+}
+.collapse_button {
+  width: 100vw;
+  height: 15vw;
+  margin: 0;
+  font-family: Lato3, serif;
+  font-size: 5vw;
+  color: white;
+  border-style: none;
+  background-color: rgb(207, 66, 120);
+}
+.collapsed-info {
+  background-color: rgb(181, 67, 120);
+  margin: 0;
+  text-align: center;
+}
+.collapsed-text {
+  margin: 0;
+  color: white;
+  font-family: Lato3, serif;
+  font-size: 5vw;
+  position: relative;
+}

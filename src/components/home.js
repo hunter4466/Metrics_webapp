@@ -25,6 +25,9 @@ const Home = () => {
       <div className="Home_Header_2">
         <h1>STATS BY COMPANY</h1>
       </div>
+      <div>
+        <h1>Loading</h1>
+      </div>
       <ul className="home_btns_cont">
         {data.map((e) => (
           <li key={e.Summary.Name}>

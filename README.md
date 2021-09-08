@@ -7,7 +7,6 @@
 
 ![screenshot](./src/images/screenshots/preview1.png)
 ![screenshot](./src/images/screenshots/preview2.png)
-![screenshot](./src/images/screenshots/preview3.png)
 
 ## Built With
 
@@ -26,7 +25,7 @@ Run:
 
 Get a live preview of the project on this link  
 
-- Link: [Live-Preview](https://)
+- Link: [Live-Preview](https://jolly-roentgen-c947cf.netlify.app/)
 
 ## Author
 

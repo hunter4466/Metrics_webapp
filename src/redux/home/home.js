@@ -3,6 +3,7 @@ const GET_DATA = 'REDUX/HOME/GET_DATA';
 const STORE_FETCHED_DATA = 'REDUX/HOME/STORE_FETCHED_DATA';
 const FILTER_DATA = 'REDUX/HOME/FILTER_DATA';
 const CHANGE_LOAD_STATE = 'REDUX/HOME/CHANGE_LOAD_STATE';
+const SWITCH_FILTER_STATE = 'REDUX/HOME/SWITCH_FILTER_STATE';
 // -------------- DEFAUL STATE -----------
 const defaultState = [];
 // -------------- ACTIONS ----------------
@@ -20,6 +21,10 @@ const filterData = (payload) => ({
 });
 const changeLoadingState = (payload) => ({
   type: CHANGE_LOAD_STATE,
+  payload,
+});
+const switchFilterState = (payload) => ({
+  type: SWITCH_FILTER_STATE,
   payload,
 });
   // -------------REDUCERS ----------------
@@ -45,6 +50,14 @@ const loadingStateReducer = (state = true, action) => {
   switch (action.type) {
     case CHANGE_LOAD_STATE:
       return action.payload;
+    default:
+      return state;
+  }
+};
+const filterStateReducer = (state = { state: '0' }, action) => {
+  switch (action.type) {
+    case SWITCH_FILTER_STATE:
+      return { state: action.payload };
     default:
       return state;
   }
@@ -81,10 +94,12 @@ export {
   getData,
   storeFetchedData,
   filterData,
+  switchFilterState,
   // -------------REDUCERS ----------------
   detailDataReducer,
   filteredDataReducer,
   loadingStateReducer,
+  filterStateReducer,
   // -------------MIDDLEWARES -------------
   fetchDataMiddleware,
   loadingChangeStateMiddleware,

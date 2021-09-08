@@ -20,6 +20,7 @@ Run:
 - `cd Metrics_webapp `
 -`Install node_modules, run npm install and install 14.17.4 node version (use nvm)`
 - Run 'npm run start' from the command line.
+- Run 'npm run test' from the command line to test.
 
 ## Link
 

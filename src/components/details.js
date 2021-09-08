@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTransition, animated } from 'react-spring';
 import pointer from '../images/assets/pointer.svg';
+import backBtn from '../images/assets/back_btn.svg';
 
 const Details = () => {
   const data = useSelector((data) => data.filteredDataReducer);
@@ -45,6 +47,9 @@ const Details = () => {
     <div>
       <div className="detail_container">
         <div className="nameTitle">
+          <NavLink to="/home">
+            <img className="back_btn" alt="back_btn" src={backBtn} />
+          </NavLink>
           <h1 className="nameTitleText">
             {data.Summary.Name}
           </h1>

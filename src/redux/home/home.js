@@ -2,6 +2,7 @@
 const GET_DATA = 'REDUX/HOME/GET_DATA';
 const STORE_FETCHED_DATA = 'REDUX/HOME/STORE_FETCHED_DATA';
 const FILTER_DATA = 'REDUX/HOME/FILTER_DATA';
+const CHANGE_LOAD_STATE = 'REDUX/HOME/CHANGE_LOAD_STATE';
 // -------------- DEFAUL STATE -----------
 const defaultState = [];
 // -------------- ACTIONS ----------------
@@ -15,6 +16,10 @@ const storeFetchedData = (payload) => ({
 });
 const filterData = (payload) => ({
   type: FILTER_DATA,
+  payload,
+});
+const changeLoadingState = (payload) => ({
+  type: CHANGE_LOAD_STATE,
   payload,
 });
   // -------------REDUCERS ----------------
@@ -36,24 +41,42 @@ const filteredDataReducer = (state = defaultState, action) => {
       return state;
   }
 };
+const loadingStateReducer = (state = true, action) => {
+  switch (action.type) {
+    case CHANGE_LOAD_STATE:
+      return action.payload;
+    default:
+      return state;
+  }
+};
   // -------------MIDDLEWARES -------------
+const fetchData = async (params) => (fetch(`https://api.aletheiaapi.com/StockData?symbol=${params}&summary=true`, {
+  headers: {
+    key: '044854F9473A42AC856A0D007FB5D93F',
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+}).then((response) => response.json()));
+
 const fetchDataMiddleware = (store) => (next) => (action) => {
   if (action.type === GET_DATA) {
     Promise.all(
       action.payload.map((e) => (
-        fetch(`https://api.aletheiaapi.com/StockData?symbol=${e}&summary=true`, {
-          headers: {
-            key: '044854F9473A42AC856A0D007FB5D93F',
-            'Content-type': 'application/json; charset=UTF-8',
-          },
-        }).then((response) => response.json())
+        fetchData(e)
       )),
     ).then((data) => store.dispatch(storeFetchedData(data)));
   }
   next(action);
 };
+const loadingChangeStateMiddleware = (store) => (next) => (action) => {
+  if (action.type === STORE_FETCHED_DATA) {
+    store.dispatch(changeLoadingState(false));
+  }
+  next(action);
+};
   // ------------- EXPORTS ----------------
 export {
+  // -------------- FUNCTIONS --------------
+  fetchData,
   // -------------- ACTIONS ----------------
   getData,
   storeFetchedData,
@@ -61,6 +84,8 @@ export {
   // -------------REDUCERS ----------------
   detailDataReducer,
   filteredDataReducer,
+  loadingStateReducer,
   // -------------MIDDLEWARES -------------
   fetchDataMiddleware,
+  loadingChangeStateMiddleware,
 };

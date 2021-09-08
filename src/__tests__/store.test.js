@@ -19,9 +19,4 @@ describe('Home component', () => {
     };
     expect(detailDataReducer(previousState, storeFetchedData(newState))).toEqual(newState);
   });
-
-  test('Function fetched Data Correctly', () => {
-    const previousState = {};
-    expect(detailDataReducer(previousState, storeFetchedData())).toEqual({});
-  });
 });

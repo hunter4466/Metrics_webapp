@@ -334,3 +334,34 @@ body {
     transform: rotate(90deg);
   }
 }
+/* --- details -- */
+.loading_state {
+  text-align: center;
+  width: 100vw;
+  height: 200vw;
+  background: linear-gradient(135deg, rgba(207, 66, 120,1) 0%, rgba(207, 66, 120,0.95) 67%, rgba(207, 66, 120,1) 100%);
+}
+.loading_state h1 {
+  position: relative;
+  margin: 0;
+  top: 30vw;
+  font-family: Lato3, serif;
+  font-size: 10vw;
+  animation: loadinganim 2s infinite;
+  color: white;
+}
+@keyframes loadinganim {
+  0%{
+    transform: scale(1) rotate(0deg);
+  }
+  35%{
+    transform: scale(1.3) rotate(0deg);
+  }
+  70%{
+    transform: scale(0) rotate(540deg);
+  }
+  100%{
+    transform: scale(1);
+  }
+
+}

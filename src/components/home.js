@@ -6,6 +6,7 @@ import pointer from '../images/assets/pointer.svg';
 
 const Home = () => {
   const data = useSelector((data) => data.detailDataReducer);
+  const onLoad = useSelector((data) => data.loadingStateReducer);
   const dispatch = useDispatch();
   const mainArray = ['AAPL', 'FB', 'INTC', 'ORCL', 'NKE', 'PFE', 'NOK', 'TWTR', 'CSCO', 'BABA', 'ATVI', 'FOXA'];
   useEffect(() => {
@@ -25,9 +26,11 @@ const Home = () => {
       <div className="Home_Header_2">
         <h1>STATS BY COMPANY</h1>
       </div>
-      <div>
-        <h1>Loading</h1>
-      </div>
+      {onLoad ? (
+        <div className="loading_state">
+          <h1>Loading</h1>
+        </div>
+      ) : ' ' }
       <ul className="home_btns_cont">
         {data.map((e) => (
           <li key={e.Summary.Name}>

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<div>
+  <div
+    className="Home_Header_1"
+  >
+    <h1>
+      Cripto Up to date
+    </h1>
+    <h2>
+      12 results
+    </h2>
+  </div>
+  <div
+    className="Home_Header_2"
+  >
+    <h1>
+      STATS BY COMPANY
+    </h1>
+  </div>
+  <div
+    className="loading_state"
+  >
+    <h1>
+      Loading
+    </h1>
+  </div>
+  <ul
+    className="home_btns_cont"
+  />
+</div>
+`;

@@ -1,0 +1,15 @@
+@mixin flexBox ($direction : row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin resize ($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin gridBorder {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(189, 189, 189);
+}
